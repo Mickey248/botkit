@@ -365,6 +365,7 @@ controller.hears(['what is my name', 'who am i'], 'message_received', function(b
         if (user && user.name) {
             bot.reply(message, 'Your name is ' + user.name);
         } else {
+            //strat to conversation
             bot.startConversation(message, function(err, convo) {
                 if (!err) {
                     convo.say('I do not know your name yet!');
@@ -415,7 +416,7 @@ controller.hears(['what is my name', 'who am i'], 'message_received', function(b
                             });
 
 
-
+                        //end to conversation
                         } else {
                             // this happens if the conversation ended prematurely for some reason
                             bot.reply(message, 'OK, nevermind!');
